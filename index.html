@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launcher | HOME</title>
+    <title>Game Launcher | HOME</title>
     <style>
         :root {
-            /* Ultra Full-Screen Green & Black Palette */
+            /* Full-Screen Premium Green & Black Palette */
             --bg-black: #000000;
             --bg-dark-gray: #0a0a0a;
             --bg-card: #0f0f0f;
@@ -158,6 +158,32 @@
             color: #666666;
         }
 
+        /* Os Split Selection Row */
+        .os-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .os-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 6px;
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .os-btn:hover {
+            border-color: var(--matrix-green);
+            background-color: #001105;
+            color: var(--matrix-green);
+        }
+
         /* Secondary Data Cards Row */
         .cards-row {
             display: grid;
@@ -244,20 +270,19 @@
 <body>
 
     <nav>
-        <div class="nav-logo">Minecraft Launcher</div>
+        <div class="nav-logo">ARAAFGAMER17</div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Game</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Downloads</a></li>
+            <li><a href="1.12.2.html">Game</a></li>
+            <li><a href="NEWS.TXT">News</a></li>
+            <li><a href="https://github.com/Araafgamer17/Launcher.github.io/releases/">Downloads</a></li>
         </ul>
     </nav>
 
     <div class="hero-container">
         
         <div class="info-section">
-            <h1>Experience Minecraft <span>Superly</span></h1>
+            <h1>Experience Minecraft <span>EaglercraftX</span></h1>
             <p class="game-text">
                 Minecraft is a game about breaking and placing blocks. At first, people built structures to protect against nocturnal monsters, but as the game grew players worked together to create wonderful, imaginative things.
             </p>
@@ -276,13 +301,14 @@
                 <div class="btn-desc">Launch instantly in your web browser v1.12.2</div>
             </a>
 
-            <a href="https://github.com/Araafgamer17/Launcher.github.io/releases/" download class="action-btn">
-                <div class="btn-flex">
-                    <div class="btn-title">Download Launcher</div>
-                    <div class="btn-arrow">&darr;</div>
-                </div>
-                <div class="btn-desc">Get the stable standalone desktop utility builds</div>
-            </a>
+            <div class="os-row">
+                <a href="https://github.com/Araafgamer17/Launcher.github.io/releases/" class="os-btn">
+                    🪟 Download Windows
+                </a>
+                <a href="https://github.com/Araafgamer17/Launcher.github.io/releases/" class="os-btn">
+                    🐧 Download Linux
+                </a>
+            </div>
 
             <div class="cards-row">
                 
