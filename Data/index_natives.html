@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Natives Registry</title></head>
+<body>
+    <script>
+        window.getNativeMetadata = function() {
+            return {
+                filterNatives: function(libraries) {
+                    let nativeList = [];
+                    libraries.forEach(lib => {
+                        if (lib.downloads?.classifiers) {
+                            Object.entries(lib.downloads.classifiers).forEach(([platform, artifact]) => {
+                                nativeList.push({
+                                    name: `${lib.name} [Native: ${platform}]`,
+                                    path: artifact.path || `${lib.name.replace(/:/g, '/')}-${platform}`,
+                                    url: artifact.url
+                                });
+                            });
+                        }
+                    });
+                    return nativeList;
+                }
+            };
+        };
+    </script>
+</body>
+</html>
