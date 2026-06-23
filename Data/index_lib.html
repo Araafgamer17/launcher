@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minecraft Library Registry</title>
+</head>
+<body>
+    <div id="meta-config" 
+         data-manifest="https://piston-meta.mojang.com/mc/game/version_manifest_v2.json"
+         data-assets-base="https://resources.download.minecraft.net">
+    </div>
 
+    <script>
+        // Global helper function that data.html can call when it links this file
+        window.getDownloadMetadata = function() {
+            return {
+                manifestUrl: document.getElementById('meta-config').getAttribute('data-manifest'),
+                assetsBaseUrl: document.getElementById('meta-config').getAttribute('data-assets-base'),
+                formatPath: function(rawPath, libraryName) {
+                    if (rawPath) return rawPath;
+                    // Fallback structural formatting if path is missing
+                    return libraryName.replace(/:/g, '/');
+                }
+            };
+        };
+    </script>
+    <h3>Minecraft Library Reference Page Loaded Successfully.</h3>
+</body>
+</html>
